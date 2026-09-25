@@ -1,5 +1,0 @@
-export const dynamic='force-static'
-import type {MetadataRoute} from 'next'
-const api=process.env.NEXT_PUBLIC_NEURAQ_API||'http://localhost:8000'
-export default async function sitemap():Promise<MetadataRoute.Sitemap>{let stories:any[]=[];try{const r=await fetch(api+'/v1/stories?limit=100',{next:{revalidate:300}});if(r.ok)stories=await r.json()}catch{}
-return [{url:'https://neuraq.dev.ar',lastModified:new Date()},{url:'https://neuraq.dev.ar/about',lastModified:new Date()},{url:'https://neuraq.dev.ar/contact',lastModified:new Date()},...stories.map(s=>({url:'https://neuraq.dev.ar/story/'+s.id,lastModified:s.updated_at?new Date(s.updated_at):new Date()}))]}
