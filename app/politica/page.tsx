@@ -1,1 +1,2 @@
-export default function Page(){return <main><a href='/'>← NeuraQ</a><h1>Política</h1><p>Cobertura política con atribución de fuentes, separación entre hechos y declaraciones, historial de correcciones y revisión reforzada.</p></main>}
+import CategoryPage from '../../components/CategoryPage'
+export default function Page(){return <CategoryPage title='Política' category='Política' description='Cobertura política con atribución de fuentes, separación entre hechos y declaraciones, historial de correcciones y revisión editorial reforzada.'/>}
