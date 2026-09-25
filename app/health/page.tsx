@@ -1,0 +1,1 @@
+export default function Health(){return <main><h1>NeuraQ Web</h1><p>Servicio operativo.</p></main>}
