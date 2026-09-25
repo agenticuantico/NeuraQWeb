@@ -1,0 +1,6 @@
+const api=process.env.NEXT_PUBLIC_NEURAQ_API || 'http://localhost:8000'
+
+export default async function Home(){
+ let stories:any[]=[]
+ try{const r=await fetch(api+'/v1/stories',{next:{revalidate:60}}); if(r.ok) stories=await r.json()}catch{}
+ return <main><header><div className='brand'>Neura<span>Q</span></div><nav><a href='/'>Inicio</a><a href='/politica'>Política</a><a href='/tecnologia'>Tecnología</a><a href='/economia'>Economía</a><a href='/mundo'>Mundo</a></nav></header><section className='hero'><p className='eyebrow'>NEURAQ · NEWS INTELLIGENCE</p><h1>Noticias recientes, verificadas y explicadas.</h1><p className='lead'>Cobertura continua basada en señales, fuentes y contexto. Cada historia conserva trazabilidad editorial.</p></section><section className='grid'>{stories.length?stories.map(s=><article key={s.id}><small>{s.updated_at}</small><h2>{s.title}</h2><p>{s.summary}</p><a href={'/story/'+s.id}>Leer historia →</a></article>):<article><small>SISTEMA</small><h2>La redacción automática está preparando la primera cobertura.</h2><p>Conecta el backend NeuraQ para recibir historias verificadas en tiempo real.</p></article>}</section><footer>NeuraQ · Fuentes y atribución visibles · Correcciones transparentes</footer></main>}
