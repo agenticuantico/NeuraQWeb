@@ -1,2 +1,2 @@
 import CategoryPage from '../../components/CategoryPage'
-export default function Page(){return <CategoryPage title='Mundo' category='Mundo' description='Noticias internacionales, eventos globales y desarrollos que impactan a distintas regiones.'/>
+export default function Page(){return <CategoryPage title='Mundo' category='Mundo' description='Noticias internacionales, eventos globales y desarrollos que impactan a distintas regiones.'/>}
