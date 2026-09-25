@@ -1,0 +1,1 @@
+export default function Terms(){return <main className='story'><h1>Terminos de uso</h1><p>NeuraQ ofrece informacion editorial basada en fuentes y puede actualizar o corregir publicaciones cuando aparecen nuevos datos verificables.</p><p>Las fuentes originales deben consultarse para decisiones importantes.</p></main>}
