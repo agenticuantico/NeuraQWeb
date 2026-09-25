@@ -1,0 +1,1 @@
+export async function GET(){return Response.json({status:'ok',service:'neuraq-web',timestamp:new Date().toISOString()})}
