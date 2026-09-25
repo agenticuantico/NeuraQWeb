@@ -1,2 +1,2 @@
 import CategoryPage from '../../components/CategoryPage'
-export default function Page(){return <CategoryPage title='Economía' category='Economía' description='Actualidad económica y empresarial con fuentes identificables, contexto y seguimiento de cambios relevantes.'/>
+export default function Page(){return <CategoryPage title='Economía' category='Economía' description='Actualidad económica y empresarial con fuentes identificables, contexto y seguimiento de cambios relevantes.'/>}
