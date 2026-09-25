@@ -1,6 +1,6 @@
 'use client'
 import {useEffect,useState} from 'react'
-const api=process.env.NEXT_PUBLIC_NEURAQ_API||'http://localhost:8000'
+const api=process.env.NEXT_PUBLIC_NEURAQ_API||''
 export default function Admin(){
  const [token,setToken]=useState(''); const [stories,setStories]=useState<any[]>([]); const [stats,setStats]=useState<any>(null); const [editing,setEditing]=useState<string|null>(null); const [form,setForm]=useState<any>({title:'',summary:'',body:'',status:'draft',featured:false,source_urls:[]}); const [msg,setMsg]=useState('')
  const headers=()=>({'Content-Type':'application/json','X-Admin-Token':token})
