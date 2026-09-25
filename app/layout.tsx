@@ -1,5 +1,4 @@
 import './globals.css'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata={title:'NeuraQ — Noticias e inteligencia en tiempo real',description:'Medio digital AI-native con verificación, fuentes y cobertura continua.'}
+import type {Metadata} from 'next'
+export const metadata:Metadata={metadataBase:new URL('https://neuraq.dev.ar'),title:{default:'NeuraQ — Noticias e inteligencia en tiempo real',template:'%s — NeuraQ'},description:'Noticias verificadas con fuentes, contexto y trazabilidad editorial.',openGraph:{type:'website',siteName:'NeuraQ',title:'NeuraQ — News Intelligence',description:'Cobertura continua basada en fuentes verificables.'},robots:{index:true,follow:true}}
 export default function RootLayout({children}:{children:React.ReactNode}){return <html lang='es'><body>{children}</body></html>}
