@@ -1,5 +1,6 @@
-const api=process.env.NEXT_PUBLIC_NEURAQ_API||'http://localhost:8000'
-export async function GET(){let stories:any[]=[];try{const r=await fetch(api+'/v1/stories?limit=50',{next:{revalidate:300}});if(r.ok)stories=await r.json()}catch{}
-const items=stories.map(s=>`<item><title><![CDATA[${s.title}]]></title><link>https://neuraq.dev.ar/story/${s.id}</link><description><![CDATA[${s.summary}]]></description><guid>https://neuraq.dev.ar/story/${s.id}</guid><pubDate>${new Date(s.published_at||s.updated_at||Date.now()).toUTCString()}</pubDate></item>`).join('')
+export const dynamic='force-static'
+const api=process.env.NEXT_PUBLIC_NEURAQ_API||''
+export async function GET(){let stories:any[]=[];try{const r=await fetch(api+'/v1/stories?limit=50',{cache:'no-store'});if(r.ok)stories=await r.json()}catch{}
+const items=stories.map(s=>`<item><title><![CDATA[${s.title}]]></title><link>https://neuraq.dev.ar/story/${s.id}</link><description><![CDATA[${s.summary||''}]]></description><guid>https://neuraq.dev.ar/story/${s.id}</guid><pubDate>${new Date(s.published_at||s.updated_at||Date.now()).toUTCString()}</pubDate></item>`).join('')
 const xml=`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>NeuraQ</title><link>https://neuraq.dev.ar</link><description>Noticias e inteligencia en tiempo real</description>${items}</channel></rss>`
-return new Response(xml,{headers:{'Content-Type':'application/rss+xml; charset=utf-8','Cache-Control':'public, max-age=300'}})}
+return new Response(xml,{headers:{'Content-Type':'application/rss+xml; charset=utf-8'}})}
