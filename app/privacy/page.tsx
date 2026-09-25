@@ -1,0 +1,1 @@
+export default function Privacy(){return <main className='story'><h1>Politica de privacidad</h1><p>NeuraQ utiliza datos tecnicos y metricas agregadas para seguridad, funcionamiento y mejora del servicio.</p><p>Las tecnologias de publicidad y medicion se utilizaran conforme a las preferencias de consentimiento aplicables.</p></main>}
