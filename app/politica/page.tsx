@@ -1,0 +1,1 @@
+export default function Page(){return <main><a href='/'>← NeuraQ</a><h1>Política</h1><p>Cobertura política con atribución de fuentes, separación entre hechos y declaraciones, historial de correcciones y revisión reforzada.</p></main>}
