@@ -22,7 +22,7 @@ Configuración de build:
 - **Node.js:** 20 o superior
 - **Variable de entorno:** `NEXT_PUBLIC_NEURAQ_API=https://api.neuraq.dev.ar`
 
-No uses `npm install npm run`: son dos acciones distintas. Cloudflare ejecuta la instalación de dependencias y luego el build.
+La instalación de dependencias y el build son pasos separados. Cloudflare debe instalar las dependencias y después ejecutar el comando de build.
 
 ## Desarrollo local
 
